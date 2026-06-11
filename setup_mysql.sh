@@ -1,17 +1,10 @@
 #!/bin/bash
-# MySQL Database Setup Script
 
-DB_NAME="myapp_db"
-DB_USER="myapp_user"
-DB_PASS="SecurePass@123"
+echo "Installing MySQL..."
 
-echo "Setting up MySQL database..."
+sudo apt update
+sudo apt install mysql-server -y
 
-sudo mysql -e "CREATE DATABASE IF NOT EXISTS ${DB_NAME};"
-sudo mysql -e "CREATE USER IF NOT EXISTS '${DB_USER}'@'localhost' IDENTIFIED BY '${DB_PASS}';"
-sudo mysql -e "GRANT ALL PRIVILEGES ON ${DB_NAME}.* TO '${DB_USER}'@'localhost';"
-sudo mysql -e "FLUSH PRIVILEGES;"
+sudo systemctl start mysql
 
-echo "Database setup complete!"
-echo "DB Name: ${DB_NAME}"
-echo "DB User: ${DB_USER}"
+echo "MySQL Installed Successfully!"
