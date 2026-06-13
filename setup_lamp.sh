@@ -1,14 +1,11 @@
-#!/bin/bash
+def install(service):
+    if service == "apache":
+        print("Installing Apache")
+    elif service == "mysql":
+        print("Installing MySQL")
+    else:
+        print("Installing PHP")
 
-echo "Installing LAMP Stack..."
-
-sudo apt update
-
-sudo apt install apache2 -y
-sudo apt install mysql-server -y
-sudo apt install php -y
-
-sudo systemctl start apache2
-sudo systemctl start mysql
-
-echo "LAMP Stack Installed Successfully!"
+install("apache")
+install("mysql")
+install("php")
