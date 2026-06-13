@@ -1,9 +1,13 @@
-def install(name):
-    if name == "mysql":
-        print("Installing MySQL")
-    elif name == "apache":
-        print("Installing Apache")
-    else:
-        print("Invalid")
+#!/bin/bash
 
-install("mysql")
+install() {
+    if [ "$1" = "mysql" ]; then
+        echo "Installing MySQL"
+    elif [ "$1" = "apache" ]; then
+        echo "Installing Apache"
+    else
+        echo "Invalid"
+    fi
+}
+
+install "mysql"
