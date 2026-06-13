@@ -1,11 +1,15 @@
-def install(service):
-    if service == "apache":
-        print("Installing Apache")
-    elif service == "mysql":
-        print("Installing MySQL")
-    else:
-        print("Installing PHP")
+#!/bin/bash
 
-install("apache")
-install("mysql")
-install("php")
+install() {
+    if [ "$1" = "apache" ]; then
+        echo "Installing Apache"
+    elif [ "$1" = "mysql" ]; then
+        echo "Installing MySQL"
+    else
+        echo "Installing PHP"
+    fi
+}
+
+install "apache"
+install "mysql"
+install "php"
