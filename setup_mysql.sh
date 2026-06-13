@@ -1,10 +1,9 @@
-#!/bin/bash
+def install(name):
+    if name == "mysql":
+        print("Installing MySQL")
+    elif name == "apache":
+        print("Installing Apache")
+    else:
+        print("Invalid")
 
-echo "Installing MySQL..."
-
-sudo apt update
-sudo apt install mysql-server -y
-
-sudo systemctl start mysql
-
-echo "MySQL Installed Successfully!"
+install("mysql")
